@@ -57,15 +57,15 @@
 
 
 
-<meta name="description" content="duduzai’s blog">
+<meta name="description" content="life is struggle">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dududzai’s Blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Dududzai’s Blog">
-<meta property="og:description" content="duduzai’s blog">
+<meta property="og:description" content="life is struggle">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dududzai’s Blog">
-<meta name="twitter:description" content="duduzai’s blog">
+<meta name="twitter:description" content="life is struggle">
 
 
 
@@ -148,6 +148,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -207,7 +217,7 @@
               
                 
                 <a class="post-title-link" href="/2016/03/17/first-hexo/" itemprop="url">
-                  Hello World
+                  Hexo+GithubPage搭建博客
                 </a>
               
             
@@ -248,106 +258,21 @@
 
       
         
-          <p>this is my first blog ,Hi!</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+          <p>记录下搭建搭建过程，也是自己的第一次开始写博客。<br>搭建环境：mac</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
+<li>安装 git</li>
+<li>安装 node</li>
+</ol>
+<p>安装前先确认是否已经安装相关组件。</p>
+<pre><code>git --version #git 
+node --version #node
+</code></pre>
+若还没安装，参考[hexo中文文档][1]进行安装，mac用户建议先下载Xcode，Xcode自带git。
+遇到的坑：可能是被墙的问题，按照官方文档无法通过nvm方式安装node，成功过，但是第二天起来node命令失效了，还不知道原因，知情者请告知，所以，最后我是以最原始的下载安装包的方式安装。附官网地址：[node.js官网][2]
+
+## 安装Hexo
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/03/17/first-hexo/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/17/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-17T15:21:26+08:00" content="2016-03-17">
-              2016-03-17
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/17/hello-world/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -406,21 +331,28 @@
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/default_avatar.jpg"
-               alt="拉布拉卡" />
-          <p class="site-author-name" itemprop="name">拉布拉卡</p>
-          <p class="site-description motion-element" itemprop="description">duduzai’s blog</p>
+               src="/images/avatar.png"
+               alt="嘟嘟仔" />
+          <p class="site-author-name" itemprop="name">嘟嘟仔</p>
+          <p class="site-description motion-element" itemprop="description">life is struggle</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -436,6 +368,15 @@
 
         
         <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">我的关注</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/wx_jin" target="_blank">WX_JIN的博客</a>
+                </li>
+              
+            </ul>
           
         </div>
 
@@ -460,7 +401,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">拉布拉卡</span>
+  <span class="author" itemprop="copyrightHolder">嘟嘟仔</span>
 </div>
 
 <div class="powered-by">
