@@ -62,12 +62,8 @@
 安装 git
 安装 node
 
-安装前先确认是否已经安装相关组件。
-git --version #git 
-node --version #node
-
-若还没安装，参考[hexo中文文档][1]进行安装，mac用户建议先下载Xcode，Xcode自带git。
-遇到的坑：可能是被墙的问题，按照官方文档无法通过nvm方式安装nod">
+安装前先确认是否已经安装相关组件。12git --version #git node --version #node
+若还没安装，参考hexo中文文档进行安装，mac用户建议先下载Xcode，Xcode自带git。遇到的坑：可能是被墙的问题，按照官方文档无法通过nvm方式安装node，成功过，但">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo+GithubPage搭建博客">
 <meta property="og:url" content="http://yoursite.com/2016/03/18/Hexo+GithubPage/index.html">
@@ -77,13 +73,14 @@ node --version #node
 安装 git
 安装 node
 
-安装前先确认是否已经安装相关组件。
-git --version #git 
-node --version #node
-
-若还没安装，参考[hexo中文文档][1]进行安装，mac用户建议先下载Xcode，Xcode自带git。
-遇到的坑：可能是被墙的问题，按照官方文档无法通过nvm方式安装nod">
-<meta property="og:updated_time" content="2016-05-06T06:01:13.000Z">
+安装前先确认是否已经安装相关组件。12git --version #git node --version #node
+若还没安装，参考hexo中文文档进行安装，mac用户建议先下载Xcode，Xcode自带git。遇到的坑：可能是被墙的问题，按照官方文档无法通过nvm方式安装node，成功过，但">
+<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/blog%2Fimage%2F%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/blog/image/git_setting.png">
+<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/blog/image/setting_detail.png">
+<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/blog/image/new_ssh_key.png">
+<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/add_ssh_key.png">
+<meta property="og:updated_time" content="2016-05-06T07:22:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+GithubPage搭建博客">
 <meta name="twitter:description" content="记录下搭建搭建过程，也是自己的第一次开始写博客。搭建环境：mac
@@ -91,12 +88,9 @@ node --version #node
 安装 git
 安装 node
 
-安装前先确认是否已经安装相关组件。
-git --version #git 
-node --version #node
-
-若还没安装，参考[hexo中文文档][1]进行安装，mac用户建议先下载Xcode，Xcode自带git。
-遇到的坑：可能是被墙的问题，按照官方文档无法通过nvm方式安装nod">
+安装前先确认是否已经安装相关组件。12git --version #git node --version #node
+若还没安装，参考hexo中文文档进行安装，mac用户建议先下载Xcode，Xcode自带git。遇到的坑：可能是被墙的问题，按照官方文档无法通过nvm方式安装node，成功过，但">
+<meta name="twitter:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/blog%2Fimage%2F%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png">
 
 
 
@@ -288,74 +282,16 @@ node --version #node
 <li>安装 git</li>
 <li>安装 node</li>
 </ol>
-<p>安装前先确认是否已经安装相关组件。</p>
-<pre><code>git --version #git 
-node --version #node
-</code></pre>
-若还没安装，参考[hexo中文文档][1]进行安装，mac用户建议先下载Xcode，Xcode自带git。
-遇到的坑：可能是被墙的问题，按照官方文档无法通过nvm方式安装node，成功过，但是第二天起来node命令失效了，还不知道原因，知情者请告知，所以，最后我是以最原始的下载安装包的方式安装。附官网地址：[node.js官网][2]
-
-## 安装Hexo
-<a id="more"></a>
-安装好git和node之后，就可以安装hexo了，简单一句命令搞定:
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-## 创建Hexo本地博客
-安装完成后，执行以下命令，Hexo将在指定目录下新建需要的文件
-<pre><code>
-$ hexo init <folder>
-$ cd <folder>
-$ npm install
-</folder></folder></code>
-</pre>
-新建之后可以看到类似以下目录结构：
-
-<p>*****图片占用*****</p>
-### 网站配置文件 _config.yml
-网站的配置文件，你可以在这里配置一些基本信息，这里列举部分关键配置：
-<pre><code>
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
-
-# Site
-title: Dududzai’s Blog #网站的标题
-subtitle: life is struggle #副标题
-description: life is struggle #描述
-author: examble #作者信息
-avatar: /images/avatar.png #头像，图片位置在相应主题目录下的images
-language: zh-Hans #中文简体
-email: 838567407@qq.com
-timezone:
-
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: next #配置主题，这里使用next主题
-stylus:
-  compress: true #自适应布局
-
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git #部署环境，基于hexo+githubpage,所以这里使用git。注意：不同版本的hexo，type有可能不同，3.x以后应使用git,具体参看官方文档
-  repository: git@github.com:username/username.github.io.git #git仓库地址，替换成你的username即可，其他保持不变，后面会提到如何创建git仓库
-  branch: master
-
-</code>
-</pre>
-附：[next主题地址][3]
-
-### 下载next主题
-next主题文档:[http://theme-next.iissnan.com/][4]
-这里我采用git安装，也可下载zip包，但是推荐使用git，可通过git pull更新新版本：
-<pre><code>
-#定位到hexo项目目录下，使用git checkout：
-
-$ cd your-hexo-site
-$ git clone https://github.com/iissnan/hexo-theme-next themes/next
-</code></pre>
-
+<p>安装前先确认是否已经安装相关组件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git --version #git </span><br><span class="line">node --version #node</span><br></pre></td></tr></table></figure></p>
+<p>若还没安装，参考<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">hexo中文文档</a>进行安装，mac用户建议先下载Xcode，Xcode自带git。<br>遇到的坑：可能是被墙的问题，按照官方文档无法通过nvm方式安装node，成功过，但是第二天起来node命令失效了，还不知道原因，知情者请告知，所以，最后我是以最原始的下载安装包的方式安装。附官网地址：<a href="https://nodejs.org/" target="_blank" rel="external">node.js官网</a></p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><a id="more"></a>
+<p>安装好git和node之后，就可以安装hexo了，简单一句命令搞定:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
+<h2 id="创建Hexo本地博客"><a href="#创建Hexo本地博客" class="headerlink" title="创建Hexo本地博客"></a>创建Hexo本地博客</h2><p>安装完成后，执行以下命令，Hexo将在指定目录下新建需要的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
+<p>新建之后可以看到类似以下目录结构：</p>
+<p><img src="http://7xs3l3.com1.z0.glb.clouddn.com/blog%2Fimage%2F%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png" alt="目录结构"></p>
+<h3 id="网站配置文件-config-yml"><a href="#网站配置文件-config-yml" class="headerlink" title="网站配置文件 _config.yml"></a>网站配置文件 _config.yml</h3><p>网站的配置文件，你可以在这里配置一些基本信息，这里列举部分关键配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># Hexo Configuration</span><br><span class="line">## Docs: https://hexo.io/docs/configuration.html</span><br><span class="line">## Source: https://github.com/hexojs/hexo/</span><br><span class="line"></span><br><span class="line"># Site</span><br><span class="line">title: Dududzai’s Blog #网站的标题</span><br><span class="line">subtitle: life is struggle #副标题</span><br><span class="line">description: life is struggle #描述</span><br><span class="line">author: examble #作者信息</span><br><span class="line">avatar: /images/avatar.png #头像，图片位置在相应主题目录下的images</span><br><span class="line">language: zh-Hans #中文简体</span><br><span class="line">email: 838567407@qq.com</span><br><span class="line">timezone:</span><br><span class="line"></span><br><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: next #配置主题，这里使用next主题</span><br><span class="line">stylus:</span><br><span class="line">  compress: true #自适应布局</span><br><span class="line"></span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git #部署环境，基于hexo+githubpage,所以这里使用git。注意：不同版本的hexo，type有可能不同，3.x以后应使用git,具体参看官方文档</span><br><span class="line">  repository: git@github.com:username/username.github.io.git #git仓库地址，替换成你的username即可，其他保持不变，后面会提到如何创建git仓库</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>附：<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">next主题地址</a></p>
+<h3 id="下载next主题"><a href="#下载next主题" class="headerlink" title="下载next主题"></a>下载next主题</h3><p>next主题文档: <a href="http://theme-next.iissnan.com/" target="_blank" rel="external">http://theme-next.iissnan.com/</a><br>这里我采用git安装，也可下载zip包，但是推荐使用git，可通过git pull更新新版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#定位到hexo项目目录下，使用git checkout：</span><br><span class="line">$ cd your-hexo-site</span><br><span class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
 <p>在themes/next/目录下也有一个_config.yml文件，这个为相应主题的配置文件，具体参考上面的文档配置，这里不赘述。</p>
 <h2 id="关联githubpage"><a href="#关联githubpage" class="headerlink" title="关联githubpage"></a>关联githubpage</h2><ol>
 <li>创建github账号</li>
@@ -364,36 +300,31 @@ $ git clone https://github.com/iissnan/hexo-theme-next themes/next
 <li>关联SSH key</li>
 </ol>
 <h3 id="创建github账号"><a href="#创建github账号" class="headerlink" title="创建github账号"></a>创建github账号</h3><p>这个简单，官网按流程注册一个</p>
-<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>github上点击右上角“+”号，新建仓库，命名格式为：你的账号名.github.io。这里要勾选创建read.me选项</p>
-<p>成功之后进入你的仓库，点Settings,点Laucher automatic page generator,按步骤完成即可。</p><br><p>这样你就拥有了githubpage,githubpage稍微了解了下，应该是github提供每个用户的介绍页面，每个账号只有一个</p>
-
-<h3 id="关联SSH-key"><a href="#关联SSH-key" class="headerlink" title="关联SSH key"></a>关联SSH key</h3><h4 id="检查本机秘钥"><a href="#检查本机秘钥" class="headerlink" title="检查本机秘钥"></a>检查本机秘钥</h4><pre><code>
-$ cd ~/. ssh 检查本机的ssh密钥
-</code></pre>
-如果提示：No such file or directory 说明你是第一次使用git。
-##### 生产新的SSH Key配置
-输入之后，直接回车即可
-<pre><code>
-$ ssh-keygen -t rsa -C "邮件地址@youremail.com"
-</code></pre>
-#### 添加SSH key到github
-1. 成功后会生成两个文件id_rsa 以及id_rsa.pub。mac用户在Users/.ssh。用文本打开，将里面的内容复制到github上。
-2. 点击右上角用户->your profile->点击左边你的头像->SSH Keys，创建新的key，将刚才复制的内容黏贴进去，完成。
-
-### 完成
-1. hexo new #新建一篇文章,但是我习惯到source/_prosts/中直接创建xxx.md文件。（hexo 识别markdown，html文件，其余会被忽略）
-
-
-一开始进入了一个误区，以为是手动通过git命令来提交代码至github，虽然本质是这样的（你不能这么做），但是配置好hexo后，hexo已经代理了所有的操作，每次部署你都可以这样方便的完成：
-<pre><code>
-hexo clean
-hexo generator #简写 hexo g
-hexo deploy #简写 hexo d
-</code></pre>
-
+<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><ol>
+<li>github上点击右上角“+”号，新建仓库，命名格式为：你的账号名.github.io。这里要勾选创建read.me选项</li>
+<li>成功之后进入你的仓库，点Settings,点Laucher automatic page generator,按步骤完成即可。</li>
+<li>这样你就拥有了githubpage,githubpage稍微了解了下，应该是github提供每个用户的介绍页面，每个账号只有一个</li>
+</ol>
+<h3 id="关联SSH-key"><a href="#关联SSH-key" class="headerlink" title="关联SSH key"></a>关联SSH key</h3><h4 id="检查本机秘钥"><a href="#检查本机秘钥" class="headerlink" title="检查本机秘钥"></a>检查本机秘钥</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/. ssh 检查本机的ssh密钥</span><br></pre></td></tr></table></figure>
+<p>如果提示：No such file or directory 说明你是第一次使用git。</p>
+<h5 id="生产新的SSH-Key配置"><a href="#生产新的SSH-Key配置" class="headerlink" title="生产新的SSH Key配置"></a>生产新的SSH Key配置</h5><p>输入之后，直接回车即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;邮件地址@youremail.com&quot;</span><br></pre></td></tr></table></figure></p>
+<h5 id="添加SSH-key到github"><a href="#添加SSH-key到github" class="headerlink" title="添加SSH key到github"></a>添加SSH key到github</h5><ol>
+<li>成功后会生成两个文件id_rsa 以及id_rsa.pub。mac用户在Users/.ssh。用文本打开，将里面的内容复制到github上。</li>
+<li>在任意界面右上角，点击你的头像，选择<strong>Settings</strong><br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/blog/image/git_setting.png" alt="git setting"></li>
+<li>选择 <strong>SSH keys</strong><br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/blog/image/setting_detail.png" alt="setting detail"></li>
+<li>点击<strong>New SSH key</strong><br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/blog/image/new_ssh_key.png" alt="new ssh key"></li>
+<li>“Title”项添加关于你要添加key的描述.如果你使用自己的mac,你可以写成”macair”。复制你的<strong>id_rsa.pub</strong>的内容到”Key”中<br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/add_ssh_key.png" alt="Add ssh key"></li>
+<li>点击<strong>Add SSH Key</strong>添加</li>
+<li>Github会要求你输入Github密码确认</li>
+</ol>
+<h3 id="添加新文章以及发布"><a href="#添加新文章以及发布" class="headerlink" title="添加新文章以及发布"></a>添加新文章以及发布</h3><ol>
+<li><p>hexo new #新建一篇文章,但是我习惯到source/_prosts/中直接创建xxx.md文件。（hexo 识别markdown，html文件，其余会被忽略）</p>
+</li>
+<li><p>一开始进入了一个误区，以为是手动通过git命令来提交代码至github，虽然本质是这样的，但是配置好hexo后，hexo已经代理了所有的操作，每次部署你都可以这样方便的完成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generator #简写 hexo g</span><br><span class="line">hexo deploy #简写 hexo d</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 <p>以上。</p>
-
-
 
       
     </div>
@@ -491,7 +422,7 @@ hexo deploy #简写 hexo d
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -499,7 +430,7 @@ hexo deploy #简写 hexo d
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -508,7 +439,7 @@ hexo deploy #简写 hexo d
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -551,7 +482,7 @@ hexo deploy #简写 hexo d
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关联githubpage"><span class="nav-number">2.</span> <span class="nav-text">关联githubpage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建github账号"><span class="nav-number">2.1.</span> <span class="nav-text">创建github账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建仓库"><span class="nav-number">2.2.</span> <span class="nav-text">创建仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联SSH-key"><span class="nav-number">2.3.</span> <span class="nav-text">关联SSH key</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#检查本机秘钥"><span class="nav-number">2.3.1.</span> <span class="nav-text">检查本机秘钥</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建Hexo本地博客"><span class="nav-number">3.</span> <span class="nav-text">创建Hexo本地博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网站配置文件-config-yml"><span class="nav-number">3.1.</span> <span class="nav-text">网站配置文件 _config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载next主题"><span class="nav-number">3.2.</span> <span class="nav-text">下载next主题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关联githubpage"><span class="nav-number">4.</span> <span class="nav-text">关联githubpage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建github账号"><span class="nav-number">4.1.</span> <span class="nav-text">创建github账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建仓库"><span class="nav-number">4.2.</span> <span class="nav-text">创建仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联SSH-key"><span class="nav-number">4.3.</span> <span class="nav-text">关联SSH key</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#检查本机秘钥"><span class="nav-number">4.3.1.</span> <span class="nav-text">检查本机秘钥</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#生产新的SSH-Key配置"><span class="nav-number">4.3.1.1.</span> <span class="nav-text">生产新的SSH Key配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加SSH-key到github"><span class="nav-number">4.3.1.2.</span> <span class="nav-text">添加SSH key到github</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加新文章以及发布"><span class="nav-number">4.4.</span> <span class="nav-text">添加新文章以及发布</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
