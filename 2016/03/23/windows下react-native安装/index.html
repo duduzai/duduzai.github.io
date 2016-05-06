@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="react-native," />
 
 
 
@@ -57,46 +57,42 @@
 
 
 
-<meta name="description" content="记录下搭建搭建过程，也是自己的第一次开始写博客。搭建环境：mac
+<meta name="description" content="写在开头此贴为本人记录贴，参考《史上最详细Windows版本搭建安装React Native环境配置》并盗了不少图(懒癌晚期)。嗯，好了，开始记录。
 准备
-安装 git
-安装 node
-
-安装前先确认是否已经安装相关组件。
-git --version #git 
-node --version #node
-
-若还没安装，参考[hexo中文文档][1]进行安装，mac用户建议先下载Xcode，Xcode自带git。
-遇到的坑：可能是被墙的问题，按照官方文档无法通过nvm方式安装nod">
+安装Java
+安装Android SDK
+安装node
+安装git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo+GithubPage搭建博客">
-<meta property="og:url" content="http://yoursite.com/2016/03/17/first-hexo/index.html">
+<meta property="og:title" content="windows下react-native安装">
+<meta property="og:url" content="http://yoursite.com/2016/03/23/windows下react-native安装/index.html">
 <meta property="og:site_name" content="Dududzai’s Blog">
-<meta property="og:description" content="记录下搭建搭建过程，也是自己的第一次开始写博客。搭建环境：mac
+<meta property="og:description" content="写在开头此贴为本人记录贴，参考《史上最详细Windows版本搭建安装React Native环境配置》并盗了不少图(懒癌晚期)。嗯，好了，开始记录。
 准备
-安装 git
-安装 node
-
-安装前先确认是否已经安装相关组件。
-git --version #git 
-node --version #node
-
-若还没安装，参考[hexo中文文档][1]进行安装，mac用户建议先下载Xcode，Xcode自带git。
-遇到的坑：可能是被墙的问题，按照官方文档无法通过nvm方式安装nod">
-<meta property="og:updated_time" content="2016-03-18T10:23:28.000Z">
+安装Java
+安装Android SDK
+安装node
+安装git">
+<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/react_native_structs.png">
+<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/react_create_success.png">
+<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/react_start.png">
+<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/react_start_page.png">
+<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/react_run_success.png">
+<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/start_error.png">
+<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/shake_setting.png">
+<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/dev_setting.png">
+<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/setting_ip.png">
+<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/react_success.png">
+<meta property="og:updated_time" content="2016-05-06T06:13:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo+GithubPage搭建博客">
-<meta name="twitter:description" content="记录下搭建搭建过程，也是自己的第一次开始写博客。搭建环境：mac
+<meta name="twitter:title" content="windows下react-native安装">
+<meta name="twitter:description" content="写在开头此贴为本人记录贴，参考《史上最详细Windows版本搭建安装React Native环境配置》并盗了不少图(懒癌晚期)。嗯，好了，开始记录。
 准备
-安装 git
-安装 node
-
-安装前先确认是否已经安装相关组件。
-git --version #git 
-node --version #node
-
-若还没安装，参考[hexo中文文档][1]进行安装，mac用户建议先下载Xcode，Xcode自带git。
-遇到的坑：可能是被墙的问题，按照官方文档无法通过nvm方式安装nod">
+安装Java
+安装Android SDK
+安装node
+安装git">
+<meta name="twitter:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/react_native_structs.png">
 
 
 
@@ -114,7 +110,7 @@ node --version #node
   };
 </script>
 
-  <title> Hexo+GithubPage搭建博客 | Dududzai’s Blog </title>
+  <title> windows下react-native安装 | Dududzai’s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -244,7 +240,7 @@ node --version #node
             
             
               
-                Hexo+GithubPage搭建博客
+                windows下react-native安装
               
             
           </h1>
@@ -256,11 +252,30 @@ node --version #node
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-17T15:21:26+08:00" content="2016-03-17">
-              2016-03-17
+            <time itemprop="dateCreated" datetime="2016-03-23T00:00:00+08:00" content="2016-03-23">
+              2016-03-23
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/react-native/" itemprop="url" rel="index">
+                    <span itemprop="name">react-native</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -283,117 +298,40 @@ node --version #node
       
 
       
-        <p>记录下搭建搭建过程，也是自己的第一次开始写博客。<br>搭建环境：mac</p>
+        <p>写在开头此贴为本人记录贴，参考<a href="http://www.lcode.org/%E5%8F%B2%E4%B8%8A%E6%9C%80%E8%AF%A6%E7%BB%86windows%E7%89%88%E6%9C%AC%E6%90%AD%E5%BB%BA%E5%AE%89%E8%A3%85react-native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" target="_blank" rel="external">《史上最详细Windows版本搭建安装React Native环境配置》</a>并盗了不少图(懒癌晚期)。嗯，好了，开始记录。</p>
 <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
-<li>安装 git</li>
-<li>安装 node</li>
+<li>安装Java</li>
+<li>安装Android SDK</li>
+<li>安装node</li>
+<li>安装git<a id="more"></a>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2>这里不介绍如何java,sdk的安装，未安装自行google或baidu，注意配置环境变量。至于node，git的，参考另外一篇<strong>《Hexo+GithubPage搭建博客》</strong>。</li>
 </ol>
-<p>安装前先确认是否已经安装相关组件。</p>
-<pre><code>git --version #git 
-node --version #node
-</code></pre>
-若还没安装，参考[hexo中文文档][1]进行安装，mac用户建议先下载Xcode，Xcode自带git。
-遇到的坑：可能是被墙的问题，按照官方文档无法通过nvm方式安装node，成功过，但是第二天起来node命令失效了，还不知道原因，知情者请告知，所以，最后我是以最原始的下载安装包的方式安装。附官网地址：[node.js官网][2]
-
-## 安装Hexo
-<a id="more"></a>
-安装好git和node之后，就可以安装hexo了，简单一句命令搞定:
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-## 创建Hexo本地博客
-安装完成后，执行以下命令，Hexo将在指定目录下新建需要的文件
-<pre><code>
-$ hexo init <folder>
-$ cd <folder>
-$ npm install
-</folder></folder></code>
-</pre>
-新建之后可以看到类似以下目录结构：
-
-<p>*****图片占用*****</p>
-### 网站配置文件 _config.yml
-网站的配置文件，你可以在这里配置一些基本信息，这里列举部分关键配置：
-<pre><code>
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
-
-# Site
-title: Dududzai’s Blog #网站的标题
-subtitle: life is struggle #副标题
-description: life is struggle #描述
-author: examble #作者信息
-avatar: /images/avatar.png #头像，图片位置在相应主题目录下的images
-language: zh-Hans #中文简体
-email: 838567407@qq.com
-timezone:
-
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: next #配置主题，这里使用next主题
-stylus:
-  compress: true #自适应布局
-
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git #部署环境，基于hexo+githubpage,所以这里使用git。注意：不同版本的hexo，type有可能不同，3.x以后应使用git,具体参看官方文档
-  repository: git@github.com:username/username.github.io.git #git仓库地址，替换成你的username即可，其他保持不变，后面会提到如何创建git仓库
-  branch: master
-
-</code>
-</pre>
-附：[next主题地址][3]
-
-### 下载next主题
-next主题文档:[http://theme-next.iissnan.com/][4]
-这里我采用git安装，也可下载zip包，但是推荐使用git，可通过git pull更新新版本：
-<pre><code>
-#定位到hexo项目目录下，使用git checkout：
-
-$ cd your-hexo-site
-$ git clone https://github.com/iissnan/hexo-theme-next themes/next
-</code></pre>
-
-<p>在themes/next/目录下也有一个_config.yml文件，这个为相应主题的配置文件，具体参考上面的文档配置，这里不赘述。</p>
-<h2 id="关联githubpage"><a href="#关联githubpage" class="headerlink" title="关联githubpage"></a>关联githubpage</h2><ol>
-<li>创建github账号</li>
-<li>创建新的仓库</li>
-<li>建立你的githubpage</li>
-<li>关联SSH key</li>
+<h3 id="安装react-native"><a href="#安装react-native" class="headerlink" title="安装react-native"></a>安装react-native</h3><ol>
+<li><p>使用git clone命令从github克隆react-native至本地：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:github.com/facebook/react-native.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入react-native目录下的react-native-cli目录，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h3 id="创建github账号"><a href="#创建github账号" class="headerlink" title="创建github账号"></a>创建github账号</h3><p>这个简单，官网按流程注册一个</p>
-<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>github上点击右上角“+”号，新建仓库，命名格式为：你的账号名.github.io。这里要勾选创建read.me选项</p>
-<p>成功之后进入你的仓库，点Settings,点Laucher automatic page generator,按步骤完成即可。</p><br><p>这样你就拥有了githubpage,githubpage稍微了解了下，应该是github提供每个用户的介绍页面，每个账号只有一个</p>
-
-<h3 id="关联SSH-key"><a href="#关联SSH-key" class="headerlink" title="关联SSH key"></a>关联SSH key</h3><h4 id="检查本机秘钥"><a href="#检查本机秘钥" class="headerlink" title="检查本机秘钥"></a>检查本机秘钥</h4><pre><code>
-$ cd ~/. ssh 检查本机的ssh密钥
-</code></pre>
-如果提示：No such file or directory 说明你是第一次使用git。
-##### 生产新的SSH Key配置
-输入之后，直接回车即可
-<pre><code>
-$ ssh-keygen -t rsa -C "邮件地址@youremail.com"
-</code></pre>
-#### 添加SSH key到github
-1. 成功后会生成两个文件id_rsa 以及id_rsa.pub。mac用户在Users/.ssh。用文本打开，将里面的内容复制到github上。
-2. 点击右上角用户->your profile->点击左边你的头像->SSH Keys，创建新的key，将刚才复制的内容黏贴进去，完成。
-
-### 完成
-1. hexo new #新建一篇文章,但是我习惯到source/_prosts/中直接创建xxx.md文件。（hexo 识别markdown，html文件，其余会被忽略）
-
-
-一开始进入了一个误区，以为是手动通过git命令来提交代码至github，虽然本质是这样的（你不能这么做），但是配置好hexo后，hexo已经代理了所有的操作，每次部署你都可以这样方便的完成：
-<pre><code>
-hexo clean
-hexo generator #简写 hexo g
-hexo deploy #简写 hexo d
-</code></pre>
-
-<p>以上。</p>
-
-
+<p><img src="http://7xs3l3.com1.z0.glb.clouddn.com/react_native_structs.png" alt="react-native-structs"><br>安装完成，可以在命令行下使用react-native来创建了。</p>
+<h2 id="创建react-native项目"><a href="#创建react-native项目" class="headerlink" title="创建react-native项目"></a>创建react-native项目</h2><p>指定到目录下执行以下命令，创建神奇的AwesomeProject：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native init AwesomeProject</span><br></pre></td></tr></table></figure></p>
+<p>由于被墙的原因，会比较慢，耐心等待（ps:本人等了very long）<br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/react_create_success.png" alt="react_create_success"></p>
+<h2 id="运行package"><a href="#运行package" class="headerlink" title="运行package"></a>运行package</h2><p>进到刚创建的AwesomeProject，执行react-native start：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd AwesomeProject</span><br><span class="line">react-native start</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://7xs3l3.com1.z0.glb.clouddn.com/react_start.png" alt="react_start"><br>此时可以通过浏览器访问 <a href="http://localhost:8081/index.android.bundle?platform=android，出现如下页面表示服务端已经可以了" target="_blank" rel="external">http://localhost:8081/index.android.bundle?platform=android，出现如下页面表示服务端已经可以了</a><br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/react_start_page.png" alt="react_start_page"></p>
+<h2 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h2><h3 id="cmd运行"><a href="#cmd运行" class="headerlink" title="cmd运行"></a>cmd运行</h3><p>另外再启动一个新的命令行,到你的项目下，执行(设备允许usb调试)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native run-android</span><br></pre></td></tr></table></figure></p>
+<p>运行成功的界面<br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/react_run_success.png" alt="react_run_success"><br>运行失败的话，根据命令行提示的错误信息修正，这里说下本人遇到的错：</p>
+<ol>
+<li>环境变量没有配置成功:<strong>ANDROID_HOME</strong>,<strong>JAVA_HOME</strong></li>
+<li>对应的sdk没有下载，比如：react-native指定build_tools为23.0.1，导致编译失败，下载相应的版本即可，或者更改相应目录下的配置文件。</li>
+</ol>
+<h3 id="手机配置"><a href="#手机配置" class="headerlink" title="手机配置"></a>手机配置</h3><ol>
+<li>首次运行手机上会显示如下界面：<br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/start_error.png" alt="start_error"></li>
+<li>莫慌，这样表示你已经运行成功了，不过这里还需设置下链接ip。摇一摇手机，你会看到：<br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/shake_setting.png" alt="shake_setting"></li>
+<li>点击<strong>Dev Settings</strong>,你将看到：<br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/dev_setting.png" alt="dev_setting"></li>
+<li>点击<strong>Debug server host &amp; port for device</strong>,输入你电脑的ip:port组合(不知道电脑ip，使用ipconfig查看)，react端口号固定为8081<br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/setting_ip.png" alt="setting_ip"></li>
+<li>再摇一次，点击<strong>Reload JS</strong>，当当当，Welcome to React Native!<br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/react_success.png" alt="react_success"></li>
+</ol>
 
       
     </div>
@@ -408,11 +346,25 @@ hexo deploy #简写 hexo d
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
+            <a href="/tags/react-native/" rel="tag">#react-native</a>
           
         </div>
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/18/Hexo+GithubPage/" rel="next" title="Hexo+GithubPage搭建博客">
+                <i class="fa fa-chevron-left"></i> Hexo+GithubPage搭建博客
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
@@ -477,17 +429,24 @@ hexo deploy #简写 hexo d
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -530,7 +489,7 @@ hexo deploy #简写 hexo d
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关联githubpage"><span class="nav-number">2.</span> <span class="nav-text">关联githubpage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建github账号"><span class="nav-number">2.1.</span> <span class="nav-text">创建github账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建仓库"><span class="nav-number">2.2.</span> <span class="nav-text">创建仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联SSH-key"><span class="nav-number">2.3.</span> <span class="nav-text">关联SSH key</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#检查本机秘钥"><span class="nav-number">2.3.1.</span> <span class="nav-text">检查本机秘钥</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装react-native"><span class="nav-number">2.1.</span> <span class="nav-text">安装react-native</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建react-native项目"><span class="nav-number">3.</span> <span class="nav-text">创建react-native项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行package"><span class="nav-number">4.</span> <span class="nav-text">运行package</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行项目"><span class="nav-number">5.</span> <span class="nav-text">运行项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cmd运行"><span class="nav-number">5.1.</span> <span class="nav-text">cmd运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手机配置"><span class="nav-number">5.2.</span> <span class="nav-text">手机配置</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
