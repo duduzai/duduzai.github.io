@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="react-native," />
+  <meta name="keywords" content="动画," />
 
 
 
@@ -57,42 +57,24 @@
 
 
 
-<meta name="description" content="写在开头此贴为本人记录贴，参考《史上最详细Windows版本搭建安装React Native环境配置》并盗了不少图(懒癌晚期)。嗯，好了，开始记录。
-准备
-安装Java
-安装Android SDK
-安装node
-安装git">
+<meta name="description" content="项目Github地址：https://github.com/qs-lll/ExpandingPager
+#Expanding动画原理如作者所说，展开动画原理比较简单，借原作者图片解释下：作者将两个CardView重叠放置，动画开始时frontFragment向上移动一定距离（Y变小），backFragment的X轴和Y轴同一比例放大。动画由ObjectAnimator类实现。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows下react-native安装">
-<meta property="og:url" content="http://yoursite.com/2016/03/23/windows下react-native安装/index.html">
+<meta property="og:title" content="酷炫动画ExpandingPager源码学习">
+<meta property="og:url" content="http://yoursite.com/2016/07/05/11酷炫动画ExpandingPager源码学习/index.html">
 <meta property="og:site_name" content="Dududzai’s Blog">
-<meta property="og:description" content="写在开头此贴为本人记录贴，参考《史上最详细Windows版本搭建安装React Native环境配置》并盗了不少图(懒癌晚期)。嗯，好了，开始记录。
-准备
-安装Java
-安装Android SDK
-安装node
-安装git">
-<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/react_native_structs.png">
-<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/react_create_success.png">
-<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/react_start.png">
-<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/react_start_page.png">
-<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/react_run_success.png">
-<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/start_error.png">
-<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/shake_setting.png">
-<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/dev_setting.png">
-<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/setting_ip.png">
-<meta property="og:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/react_success.png">
-<meta property="og:updated_time" content="2016-05-30T03:48:05.000Z">
+<meta property="og:description" content="项目Github地址：https://github.com/qs-lll/ExpandingPager
+#Expanding动画原理如作者所说，展开动画原理比较简单，借原作者图片解释下：作者将两个CardView重叠放置，动画开始时frontFragment向上移动一定距离（Y变小），backFragment的X轴和Y轴同一比例放大。动画由ObjectAnimator类实现。">
+<meta property="og:image" content="http://o7yx5es06.bkt.clouddn.com/_image/2016-07-06%2020-24-52.jpg">
+<meta property="og:image" content="http://o7yx5es06.bkt.clouddn.com/_image/2016-07-06%2020-31-07.jpg">
+<meta property="og:image" content="http://o7yx5es06.bkt.clouddn.com/_image/2016-07-06%2020-36-46.jpg">
+<meta property="og:image" content="http://o7yx5es06.bkt.clouddn.com/_image/2016-07-06%2020-42-56.jpg">
+<meta property="og:updated_time" content="2016-08-10T07:13:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows下react-native安装">
-<meta name="twitter:description" content="写在开头此贴为本人记录贴，参考《史上最详细Windows版本搭建安装React Native环境配置》并盗了不少图(懒癌晚期)。嗯，好了，开始记录。
-准备
-安装Java
-安装Android SDK
-安装node
-安装git">
-<meta name="twitter:image" content="http://7xs3l3.com1.z0.glb.clouddn.com/react_native_structs.png">
+<meta name="twitter:title" content="酷炫动画ExpandingPager源码学习">
+<meta name="twitter:description" content="项目Github地址：https://github.com/qs-lll/ExpandingPager
+#Expanding动画原理如作者所说，展开动画原理比较简单，借原作者图片解释下：作者将两个CardView重叠放置，动画开始时frontFragment向上移动一定距离（Y变小），backFragment的X轴和Y轴同一比例放大。动画由ObjectAnimator类实现。">
+<meta name="twitter:image" content="http://o7yx5es06.bkt.clouddn.com/_image/2016-07-06%2020-24-52.jpg">
 
 
 
@@ -110,7 +92,7 @@
   };
 </script>
 
-  <title> windows下react-native安装 | Dududzai’s Blog </title>
+  <title> 酷炫动画ExpandingPager源码学习 | Dududzai’s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -240,7 +222,7 @@
             
             
               
-                windows下react-native安装
+                酷炫动画ExpandingPager源码学习
               
             
           </h1>
@@ -252,8 +234,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-23T00:00:00+08:00" content="2016-03-23">
-              2016-03-23
+            <time itemprop="dateCreated" datetime="2016-07-05T10:36:32+08:00" content="2016-07-05">
+              2016-07-05
             </time>
           </span>
 
@@ -266,8 +248,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/react-native/" itemprop="url" rel="index">
-                    <span itemprop="name">react-native</span>
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
                   </a>
                 </span>
 
@@ -298,40 +280,9 @@
       
 
       
-        <p>写在开头此贴为本人记录贴，参考<a href="http://www.lcode.org/%E5%8F%B2%E4%B8%8A%E6%9C%80%E8%AF%A6%E7%BB%86windows%E7%89%88%E6%9C%AC%E6%90%AD%E5%BB%BA%E5%AE%89%E8%A3%85react-native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" target="_blank" rel="external">《史上最详细Windows版本搭建安装React Native环境配置》</a>并盗了不少图(懒癌晚期)。嗯，好了，开始记录。</p>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
-<li>安装Java</li>
-<li>安装Android SDK</li>
-<li>安装node</li>
-<li>安装git<a id="more"></a>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2>这里不介绍如何java,sdk的安装，未安装自行google或baidu，注意配置环境变量。至于node，git的，参考另外一篇<strong>《Hexo+GithubPage搭建博客》</strong>。</li>
-</ol>
-<h3 id="安装react-native"><a href="#安装react-native" class="headerlink" title="安装react-native"></a>安装react-native</h3><ol>
-<li><p>使用git clone命令从github克隆react-native至本地：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:github.com/facebook/react-native.git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>进入react-native目录下的react-native-cli目录，输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><img src="http://7xs3l3.com1.z0.glb.clouddn.com/react_native_structs.png" alt="react-native-structs"><br>安装完成，可以在命令行下使用react-native来创建了。</p>
-<h2 id="创建react-native项目"><a href="#创建react-native项目" class="headerlink" title="创建react-native项目"></a>创建react-native项目</h2><p>指定到目录下执行以下命令，创建神奇的AwesomeProject：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native init AwesomeProject</span><br></pre></td></tr></table></figure></p>
-<p>由于被墙的原因，会比较慢，耐心等待（ps:本人等了very long）<br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/react_create_success.png" alt="react_create_success"></p>
-<h2 id="运行package"><a href="#运行package" class="headerlink" title="运行package"></a>运行package</h2><p>进到刚创建的AwesomeProject，执行react-native start：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd AwesomeProject</span><br><span class="line">react-native start</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://7xs3l3.com1.z0.glb.clouddn.com/react_start.png" alt="react_start"><br>此时可以通过浏览器访问 <a href="http://localhost:8081/index.android.bundle?platform=android，出现如下页面表示服务端已经可以了" target="_blank" rel="external">http://localhost:8081/index.android.bundle?platform=android，出现如下页面表示服务端已经可以了</a><br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/react_start_page.png" alt="react_start_page"></p>
-<h2 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h2><h3 id="cmd运行"><a href="#cmd运行" class="headerlink" title="cmd运行"></a>cmd运行</h3><p>另外再启动一个新的命令行,到你的项目下，执行(设备允许usb调试)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native run-android</span><br></pre></td></tr></table></figure></p>
-<p>运行成功的界面<br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/react_run_success.png" alt="react_run_success"><br>运行失败的话，根据命令行提示的错误信息修正，这里说下本人遇到的错：</p>
-<ol>
-<li>环境变量没有配置成功:<strong>ANDROID_HOME</strong>,<strong>JAVA_HOME</strong></li>
-<li>对应的sdk没有下载，比如：react-native指定build_tools为23.0.1，导致编译失败，下载相应的版本即可，或者更改相应目录下的配置文件。</li>
-</ol>
-<h3 id="手机配置"><a href="#手机配置" class="headerlink" title="手机配置"></a>手机配置</h3><ol>
-<li>首次运行手机上会显示如下界面：<br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/start_error.png" alt="start_error"></li>
-<li>莫慌，这样表示你已经运行成功了，不过这里还需设置下链接ip。摇一摇手机，你会看到：<br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/shake_setting.png" alt="shake_setting"></li>
-<li>点击<strong>Dev Settings</strong>,你将看到：<br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/dev_setting.png" alt="dev_setting"></li>
-<li>点击<strong>Debug server host &amp; port for device</strong>,输入你电脑的ip:port组合(不知道电脑ip，使用ipconfig查看)，react端口号固定为8081<br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/setting_ip.png" alt="setting_ip"></li>
-<li>再摇一次，点击<strong>Reload JS</strong>，当当当，Welcome to React Native!<br><img src="http://7xs3l3.com1.z0.glb.clouddn.com/react_success.png" alt="react_success"></li>
-</ol>
+        <p><strong>项目Github地址</strong>：<a href="https://github.com/qs-lll/ExpandingPager" target="_blank" rel="external">https://github.com/qs-lll/ExpandingPager</a></p>
+<p>#Expanding动画原理<br>如作者所说，展开动画原理比较简单，借原作者图片解释下：<br><img src="http://o7yx5es06.bkt.clouddn.com/_image/2016-07-06%2020-24-52.jpg" alt=""><br>作者将两个CardView重叠放置，动画开始时frontFragment向上移动一定距离（Y变小），backFragment的X轴和Y轴同一比例放大。动画由ObjectAnimator类实现。<br><a id="more"></a><br><img src="http://o7yx5es06.bkt.clouddn.com/_image/2016-07-06%2020-31-07.jpg" alt=""><br>接着作者为每个fragment的rootView添加了onTouch监听事件，实现手势下滑时收缩动画。作者直接使用<br>objectAnimator.revers()反转动画达到收缩效果，如下<br><img src="http://o7yx5es06.bkt.clouddn.com/_image/2016-07-06%2020-36-46.jpg" alt=""><br>不过原作者的动画有一个缺陷，在viewPager滑动过程，不能随手势慢慢隐藏，而是在滑动开始的时候粗鲁的执行。这里我做了下改动，监听viewPager的滑动事件，实现随手势慢慢收缩效果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) &#123;</span><br><span class="line">                ExpandingFragment expandingFragment = ExpandingPagerFactory.getCurrentFragment(viewPager);</span><br><span class="line">                expandingFragment.closeBySlide(position,positionOffset,positionOffsetPixels);</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure></p>
+<p>参数<code>positionOffset</code>判断滑动的比例，值为中线以左[0.0-0.999]或中线以右[0.99-0.0]<br>参数<code>position</code>判断fragment是否划过ViewPager中线，position == fragment在viewPager中的索引位置为左，反之为右。正由于positionOffset这个参数，中线以左越靠近中线趋近于0，中线以右越靠近中线趋近于1.0。所以在随手势变化的时候越过中线的一瞬间值会截然相反，这个时候我们就得根据position来做调整。<br><img src="http://o7yx5es06.bkt.clouddn.com/_image/2016-07-06%2020-42-56.jpg" alt=""><br>这样就可以实现随手势伸缩展开了。这时候会有另外一个问题，手势的变化的临界值不固定，原先判断isOpen()就失效了，随手势变化，scale趋近1.2f却不一定为2.f，isOpen中判断view的scale值 == 1.2f会出现漏掉的情况，这里我将判断改为scale &gt; 1.002f，只要没有趋近1.0f都是打开的状态。这样就解决了上面的问题</p>
 
       
     </div>
@@ -346,7 +297,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/react-native/" rel="tag">#react-native</a>
+            <a href="/tags/动画/" rel="tag">#动画</a>
           
         </div>
       
@@ -355,16 +306,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/18/Hexo+GithubPage/" rel="next" title="Hexo+GithubPage搭建博客">
-                <i class="fa fa-chevron-left"></i> Hexo+GithubPage搭建博客
+              <a href="/2016/06/23/10酷炫动画DepthLIBAndroid源码学习/" rel="next" title="酷炫动画DepthLIBAndroid源码学习">
+                <i class="fa fa-chevron-left"></i> 酷炫动画DepthLIBAndroid源码学习
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/06/ijkplayer编译/" rel="prev" title="ijkplayer的编译">
-                ijkplayer的编译 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/27/12酷炫动画FlyRefresh源码学习/" rel="prev" title="酷炫的FlyRefresh源码学习">
+                酷炫的FlyRefresh源码学习 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -493,7 +444,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装react-native"><span class="nav-number">2.1.</span> <span class="nav-text">安装react-native</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建react-native项目"><span class="nav-number">3.</span> <span class="nav-text">创建react-native项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行package"><span class="nav-number">4.</span> <span class="nav-text">运行package</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行项目"><span class="nav-number">5.</span> <span class="nav-text">运行项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cmd运行"><span class="nav-number">5.1.</span> <span class="nav-text">cmd运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手机配置"><span class="nav-number">5.2.</span> <span class="nav-text">手机配置</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

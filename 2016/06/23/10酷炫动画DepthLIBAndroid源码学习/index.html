@@ -1,0 +1,749 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="动画," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="项目GitHub地址：https://github.com/danielzeller/Depth-LIB-Android-
+#Fragment转场动画TransitionHelper.java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="酷炫动画DepthLIBAndroid源码学习">
+<meta property="og:url" content="http://yoursite.com/2016/06/23/10酷炫动画DepthLIBAndroid源码学习/index.html">
+<meta property="og:site_name" content="Dududzai’s Blog">
+<meta property="og:description" content="项目GitHub地址：https://github.com/danielzeller/Depth-LIB-Android-
+#Fragment转场动画TransitionHelper.java">
+<meta property="og:image" content="http://o7yx5es06.bkt.clouddn.com/_image/water.png">
+<meta property="og:image" content="http://o7yx5es06.bkt.clouddn.com/_image/2016-06-23%2017-29-41.jpg">
+<meta property="og:image" content="http://o7yx5es06.bkt.clouddn.com/_image/2016-06-24%2010-57-07.jpg">
+<meta property="og:updated_time" content="2016-08-10T07:14:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="酷炫动画DepthLIBAndroid源码学习">
+<meta name="twitter:description" content="项目GitHub地址：https://github.com/danielzeller/Depth-LIB-Android-
+#Fragment转场动画TransitionHelper.java">
+<meta name="twitter:image" content="http://o7yx5es06.bkt.clouddn.com/_image/water.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 酷炫动画DepthLIBAndroid源码学习 | Dududzai’s Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Dududzai’s Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">life is struggle</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                酷炫动画DepthLIBAndroid源码学习
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-23T13:58:50+08:00" content="2016-06-23">
+              2016-06-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>项目GitHub地址：<a href="https://github.com/danielzeller/Depth-LIB-Android-" target="_blank" rel="external">https://github.com/danielzeller/Depth-LIB-Android-</a></p>
+<p>#Fragment转场动画<br><code>TransitionHelper.java</code><br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">static ObjectAnimator introAnimate(final DepthLayout target, final float moveY, final float customElevation, long delay, int subtractDelay) &#123;</span><br><span class="line">        //设置动画中心点x,y坐标</span><br><span class="line">        target.setPivotY(getDistanceToCenter(target));</span><br><span class="line">        target.setPivotX(getDistanceToCenterX(target));</span><br><span class="line">        //设置摄像机距离(z轴)，由于view全屏，摄像机需拉高，</span><br><span class="line">        target.setCameraDistance(10000 * target.getResources().getDisplayMetrics().density);</span><br><span class="line">        //沿Y轴移动View，从底部进入；-moveY * target.getResources().getDisplayMetrics().density而不是0，可以达到分层效果</span><br><span class="line">        ObjectAnimator translationY2 = ObjectAnimator.ofFloat(target, View.TRANSLATION_Y, target.getResources().getDisplayMetrics().heightPixels, -moveY * target.getResources().getDisplayMetrics().density).setDuration(800);</span><br><span class="line">        translationY2.setInterpolator(new ExpoOut());</span><br><span class="line">        translationY2.setStartDelay(700 + subtractDelay);</span><br><span class="line">        translationY2.start();</span><br><span class="line">        target.setTranslationY(target.getResources().getDisplayMetrics().heightPixels);</span><br><span class="line">        //沿X轴移动View,从左进入</span><br><span class="line">        ObjectAnimator translationX2 = ObjectAnimator.ofFloat(target, View.TRANSLATION_X, -target.getResources().getDisplayMetrics().widthPixels, 0).setDuration(800);</span><br><span class="line">        translationX2.setInterpolator(new ExpoOut());</span><br><span class="line">        translationX2.setStartDelay(700 + subtractDelay);</span><br><span class="line">        translationX2.start();</span><br><span class="line">        target.setTranslationX(-target.getResources().getDisplayMetrics().widthPixels);</span><br><span class="line">        //矫正-moveY * target.getResources().getDisplayMetrics().density距离</span><br><span class="line">        ObjectAnimator translationY = ObjectAnimator.ofFloat(target, View.TRANSLATION_Y, 0).setDuration(700);</span><br><span class="line">        translationY.setInterpolator(new BackOut());</span><br><span class="line">        translationY.setStartDelay(700 + 800);</span><br><span class="line">        translationY.start();</span><br><span class="line">        //绕X轴旋转，方向：顺时针(与x轴正向方向相对,即Y轴朝Z轴旋转)。X轴 Y轴旋转都为3D层变换</span><br><span class="line">        ObjectAnimator rotationX = ObjectAnimator.ofFloat(target, View.ROTATION_X, TARGET_ROTATION_X, 0).setDuration(1000);</span><br><span class="line">        rotationX.setInterpolator(new QuintInOut());</span><br><span class="line">        rotationX.setStartDelay(700 + FISRTDELAY + subtractDelay);</span><br><span class="line">        rotationX.start();</span><br><span class="line">        target.setRotationX(TARGET_ROTATION_X);</span><br><span class="line">        //自定义View实现shadow</span><br><span class="line">        ObjectAnimator elevation = ObjectAnimator.ofFloat(target, &quot;CustomShadowElevation&quot;, customElevation * target.getResources().getDisplayMetrics().density, target.getCustomShadowElevation()).setDuration(1000);</span><br><span class="line">        elevation.setInterpolator(new QuintInOut());</span><br><span class="line">        elevation.setStartDelay(700 + FISRTDELAY + subtractDelay * 2);</span><br><span class="line">        elevation.start();</span><br><span class="line">        target.setCustomShadowElevation(customElevation * target.getResources().getDisplayMetrics().density);</span><br><span class="line">        //缩放动画，0.5f放大到原来1f倍大小。</span><br><span class="line">        ObjectAnimator scaleX = ObjectAnimator.ofFloat(target, View.SCALE_X, TARGET_SCALE, target.getScaleX()).setDuration(1000);</span><br><span class="line">        scaleX.setInterpolator(new CircInOut());</span><br><span class="line">        scaleX.setStartDelay(700 + FISRTDELAY + subtractDelay);</span><br><span class="line">        scaleX.start();</span><br><span class="line">        target.setScaleX(TARGET_SCALE);</span><br><span class="line"></span><br><span class="line">        ObjectAnimator scaleY = ObjectAnimator.ofFloat(target, View.SCALE_Y, TARGET_SCALE, target.getScaleY()).setDuration(1000);</span><br><span class="line">        scaleY.setInterpolator(new CircInOut());</span><br><span class="line">        scaleY.setStartDelay(700 + FISRTDELAY + subtractDelay);</span><br><span class="line">        scaleY.start();</span><br><span class="line">        target.setScaleY(TARGET_SCALE);</span><br><span class="line">        //Z轴不变，X轴与Y轴组成的2D面内旋转</span><br><span class="line">        ObjectAnimator rotation = ObjectAnimator.ofFloat(target, View.ROTATION, TARGET_ROTATION, 0).setDuration(1400);</span><br><span class="line">        rotation.setInterpolator(new QuadInOut());</span><br><span class="line">        rotation.setStartDelay(FISRTDELAY + subtractDelay);</span><br><span class="line">        rotation.start();</span><br><span class="line">        target.setRotation(TARGET_ROTATION);</span><br><span class="line">        rotation.addListener(getShowStatusBarListener(target));</span><br><span class="line">        return scaleY;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>#WaterFragment水流动画<br>WaterFragment中是WaterSceneView呈现了水流的View，WaterSceneView继承View，通过重写onDraw方法，将水流画上去的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">WaterSceneView.java</span><br><span class="line">@Override</span><br><span class="line">    protected void onDraw(Canvas canvas) &#123;</span><br><span class="line">        super.onDraw(canvas);</span><br><span class="line">        ...</span><br><span class="line">        for (Renderable renderable : renderables) &#123;</span><br><span class="line">            renderable.draw(canvas);</span><br><span class="line">            renderable.update(deltaTime, 0);</span><br><span class="line">        &#125;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>Renderable.java内的方法很简单，是渲染的基类，抽象了通用坐标等属性和draw方法。我们看到<code>renderables</code>是一个数组,它在<code>init()</code>时初始化:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">WaterSceneView.java</span><br><span class="line">private void init() &#123;</span><br><span class="line">        renderables = new Renderable[4];</span><br><span class="line">        ...</span><br><span class="line">        water = new Water(waterBitmap, foam, getYCoordByPercent(0.65f), getYCoordByPercent(1f), getXCoordByPercent(1f), 6);</span><br><span class="line">        renderables[0] = water;</span><br><span class="line">        ...</span><br><span class="line">        renderables[1] = new Renderable(aura, getXCoordByPercent(0.5f), getYCoordByPercent(0.35f));</span><br><span class="line">        ...</span><br><span class="line">        noiseScratchEffect = new NoiseEffect(noiseScratch, 100, 2f);</span><br><span class="line">        renderables[2] = noiseScratchEffect;</span><br><span class="line">        noise = new NoiseEffect(noiseReg, 30, 1.5f);</span><br><span class="line">        renderables[3] = noise;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>Water</code>对象即水流对象，继承了渲染基类：<code>Renderable</code>,实现了<code>draw</code>方法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Water.java</span><br><span class="line">@Override</span><br><span class="line">    public void draw(Canvas canvas) &#123;</span><br><span class="line">        water.draw(canvas);</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>water</code>为<code>PathBitmapMesh</code>类型，<code>PathBitmapMesh</code>实现了draw方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PathbitmapMesh.java</span><br><span class="line">public void draw(Canvas canvas) &#123;</span><br><span class="line">        canvas.drawBitmapMesh(bitmap, HORIZONTAL_SLICES, VERTICAL_SLICES, drawingVerts, 0, null, 0, paint);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>终于看到了实际绘制的方法。至此基本的绘制流程就走通了：View(WaterSceneView.java) -&gt; onDraw() -&gt; Water.java -&gt;draw() -&gt; PathBitmapMesh.java -&gt; draw() -&gt; canvas.drawBitmapMesh(…)</p>
+<p>##核心绘制类：PathBitmapMesh.java。<br>水流位图（49*201）:<br><img src="http://o7yx5es06.bkt.clouddn.com/_image/water.png" alt=""><br>那waterSceneView是怎么铺满X轴呢？来看看Canvas提供的drawBitmapMesh(Bitmap bitmap, int meshWidth, int meshHeight, float[] verts, int vertOffset, int[] colors, int colorOffset, Paint paint)</p>
+<ul>
+<li>工作原理<br>Draw the bitmap through the mesh, where mesh vertices are evenly distributed across the bitmap. There are meshWidth+1 vertices across, and meshHeight+1 vertices down. The verts array is accessed in row-major order, so that the first meshWidth+1 vertices are distributed across the top of the bitmap from left to right<br>通过将图片平方成若干网格的顶点坐标画到屏幕上(注意，顶点坐标不是顶点在位图上的坐标)。所以这里有(meshWidth+1)*(meshHeight+1)个顶点。verts数组是一个有序的一维数组，从左上角开始所有的顶点坐标都被放入verts数组中，偶数为x坐标，奇数为y坐标。</li>
+</ul>
+<p><img src="http://o7yx5es06.bkt.clouddn.com/_image/2016-06-23%2017-29-41.jpg" alt=""></p>
+<ul>
+<li>具体实现<br>图片网格对应顶点坐标，canvas会扭曲图片到对应坐标，自动计算周围的扭曲曲线(该demo看不出扭曲的效果，替换纯色water图片可以看出为横向拉伸效果)。这样就达到了填铺的效果。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">PathbitmapMesh.java</span><br><span class="line"></span><br><span class="line">private static final int HORIZONTAL_SLICES = 6;</span><br><span class="line"> private static final int VERTICAL_SLICES = 1;</span><br><span class="line"> </span><br><span class="line">public void matchVertsToPath(Path path, float bottomCoord, float extraOffset) &#123;</span><br><span class="line">        PathMeasure pm = new PathMeasure(path, false);</span><br><span class="line">        for (int i = 0; i &lt; staticVerts.length / 2; i++) &#123;</span><br><span class="line">            float yIndexValue = staticVerts[i * 2 + 1];</span><br><span class="line">            float xIndexValue = staticVerts[i * 2];</span><br><span class="line">            float percentOffsetX = (0.000001f + xIndexValue) / bitmap.getWidth();</span><br><span class="line">            float percentOffsetX2 = (0.000001f + xIndexValue) / (bitmap.getWidth() + extraOffset);</span><br><span class="line">            percentOffsetX2 += pathOffsetPercent;</span><br><span class="line">            pm.getPosTan(pm.getLength() * (1f - percentOffsetX), coords, null);</span><br><span class="line">            pm.getPosTan(pm.getLength() * (1f - percentOffsetX2), coords2, null);</span><br><span class="line">            if (yIndexValue == 0) &#123;</span><br><span class="line">                setXY(drawingVerts, i, coords[0], coords2[1]);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                float desiredYCoord = bottomCoord;</span><br><span class="line">                setXY(drawingVerts, i, coords[0], desiredYCoord);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">public void draw(Canvas canvas) &#123;</span><br><span class="line">        canvas.drawBitmapMesh(bitmap, HORIZONTAL_SLICES, VERTICAL_SLICES, drawingVerts, 0, null, 0, paint);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>drawingVerts</code>顶点坐标数组，<code>matchVertsToPath(Path path, float bottomCoord, float extraOffset)</code>为计算坐标的方法。<br><code>matchVertsToPath()</code>通过指定path和PathMeasure来计算对应点坐标，PathMeasure几个方法：</p>
+<ul>
+<li>float getLength() 返回path的长度</li>
+<li>boolean getPosTan(float distance, float[] pos, float[] tan) 传入一个距离distance，计算该距离的点坐标并填入pos，切线数据放入tan</li>
+</ul>
+<p>这个path就相当于变化的海浪线,沿这这条线，传入一个距离就能知道对应的坐标，非常方便的就能绘画出对应的海浪。<code>staticVerts</code>在位图中顶点坐标数组(0-6 <em> 0-1) = 7 </em> 2 = 14个顶点。得到各顶点百分比<code>float percentOffsetX = (0.000001f + xIndexValue) / bitmap.getWidth()</code>，通过这个百分比<code>pm.getPosTan(pm.getLength() * (1f - percentOffsetX), coords, null);</code>计算得到各顶点对应的坐标，这里用(1-percentOffseX)使得图片反转(注：纯色无法看出)。当<code>yIndexValue == 0</code>的时候为网格上部分高顶点(Y轴方向只有一格)，随时间变化取不同高度，形成海面波动的效果，同时引入第二个<code>percentOffsetX2</code>取X轴错位的Y坐标(这里取的是-0.06个百分比,因为这段时间是呈线性递减变化直到24%左右，变换平滑)，让波动更生动不生硬。而<code>yIndexValue !=0</code>的时候底部直接设置view底部的坐标即可。<br><img src="http://o7yx5es06.bkt.clouddn.com/_image/2016-06-24%2010-57-07.jpg" alt=""></p>
+<p>##Foam泡沫效果<br><code>Foam.java</code>也是继承<code>PathBitmapMesh</code>，能够实现海平面被光照射的反光效果，使水面更有层次感，看下具体实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Foam.java</span><br><span class="line">public void matchVertsToPath(Path path, float extraOffset) &#123;</span><br><span class="line">    ...</span><br><span class="line">            if (yIndexValue == 0) &#123;</span><br><span class="line">                setXY(drawingVerts, i, coords[0], coords2[1] + verticalOffset);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                float desiredYCoord = Math.max(coords2[1], coords2[1] + easedFoamCoords[Math.min(easedFoamCoords.length - 1, index)]);</span><br><span class="line">                setXY(drawingVerts, i, coords[0], desiredYCoord + verticalOffset);</span><br><span class="line">                index += 1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>与<code>Water</code>不同的地方在于每条白光的底部坐标是变化的，<code>Water</code>中第二行所有顶点的Y坐标都是固定的，这里需要设计一个随机的变化来填充白光第二行的Y坐标，这里不理解原作者的意图，做法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Foam.java</span><br><span class="line">void update(float deltaTime) &#123;</span><br><span class="line">        for (int i = 0; i &lt; foamCoords.length; i++) &#123;</span><br><span class="line">            easedFoamCoords[i] += ((foamCoords[i] - easedFoamCoords[i])) * deltaTime;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>#WindFragment树林-熊-风动画</p>
+<p>##树林动画<br>和WaterFragment一样，WindFragment里也有个主要View：BearSceneView。<code>BearSceneView.java</code>中包含了<code>RenderableThree</code>，<code>ParticleSystem flames</code>，<code>ParticleSystem sparks</code>，<code>Smoke</code>,<code>AuraDrawable</code><br><code>RenderableThree.java</code>(作者失误，树应为tree)与water实现基本一致，不同之处在于树木是随风左右弯曲，所以他的path包含leftPath和rightPath，然后根据leftPath计算每棵树的第一列XY坐标，rightPath计算第二列XY坐标。这里不做具体解释<br><code>AuraDrawable.java</code>光晕实现类，没什么内容，交替两帧图片画到View上即可。<br><code>ParticleSystem.java</code>粒子系统类，实现了flames火焰动画，sparks火星动画。里面有两个方法：</p>
+<ul>
+<li>draw(Canvas canvas)负责绘制矩形颗粒</li>
+<li>update(float deltaTime,float wind)更新下一次绘制的颗粒XY坐标的计算，值根据增量时间，和风力大小来生成，增量时间越大Y值越大，风力越大X值越大，反之亦然。</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/动画/" rel="tag">#动画</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/06/9standford university object c/" rel="next" title="class logistics overview of ios mvc,object-c">
+                <i class="fa fa-chevron-left"></i> class logistics overview of ios mvc,object-c
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/05/11酷炫动画ExpandingPager源码学习/" rel="prev" title="酷炫动画ExpandingPager源码学习">
+                酷炫动画ExpandingPager源码学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="嘟嘟仔" />
+          <p class="site-author-name" itemprop="name">嘟嘟仔</p>
+          <p class="site-description motion-element" itemprop="description">life is struggle</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">我的关注</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/wx_jin" target="_blank">WX_JIN的博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">嘟嘟仔</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>

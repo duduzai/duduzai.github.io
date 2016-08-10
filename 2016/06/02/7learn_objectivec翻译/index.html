@@ -1,0 +1,778 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="object-c," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="原文链接：learn_objectivec
+#Objective-CObjective-C （简写：OC）是写Mac软件的基础语言。如果你熟悉面向对象和C语言，那么OC对你来说将不那么陌生。如果你还没学过C语言，建议你先看看C Tutorial">
+<meta property="og:type" content="article">
+<meta property="og:title" content="learn_objectivec翻译">
+<meta property="og:url" content="http://yoursite.com/2016/06/02/7learn_objectivec翻译/index.html">
+<meta property="og:site_name" content="Dududzai’s Blog">
+<meta property="og:description" content="原文链接：learn_objectivec
+#Objective-CObjective-C （简写：OC）是写Mac软件的基础语言。如果你熟悉面向对象和C语言，那么OC对你来说将不那么陌生。如果你还没学过C语言，建议你先看看C Tutorial">
+<meta property="og:image" content="http://yoursite.com/./_image/2016-06-03 10-07-58.png">
+<meta property="og:updated_time" content="2016-08-10T07:14:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="learn_objectivec翻译">
+<meta name="twitter:description" content="原文链接：learn_objectivec
+#Objective-CObjective-C （简写：OC）是写Mac软件的基础语言。如果你熟悉面向对象和C语言，那么OC对你来说将不那么陌生。如果你还没学过C语言，建议你先看看C Tutorial">
+<meta name="twitter:image" content="http://yoursite.com/./_image/2016-06-03 10-07-58.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> learn_objectivec翻译 | Dududzai’s Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Dududzai’s Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">life is struggle</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                learn_objectivec翻译
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-02T11:35:42+08:00" content="2016-06-02">
+              2016-06-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ios/" itemprop="url" rel="index">
+                    <span itemprop="name">ios</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>原文链接：<a href="http://cocoadevcentral.com/d/learn_objectivec/" target="_blank" rel="external">learn_objectivec</a></p>
+<p>#Objective-C<br>Objective-C （简写：OC）是写Mac软件的基础语言。如果你熟悉面向对象和C语言，那么OC对你来说将不那么陌生。如果你还没学过C语言，建议你先看看<a href="http://cocoadevcentral.com/articles/000081.php" target="_blank" rel="external">C Tutorial</a><br><a id="more"></a></p>
+<p>#PART 1 - Calling Methods<br>让我们先看几个例子来迅速了解OC。<br>调用对象的方法的基础语法是这样子的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[object method];</span><br><span class="line">[object methodWithInput:input];</span><br></pre></td></tr></table></figure></p>
+<p>有返回值的调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">output = [object methodWithOutput];</span><br><span class="line">output = [object methodWithInputAndOutput:input];</span><br></pre></td></tr></table></figure></p>
+<p>同时你可以使用类方法直接调用。下面的例子中，我们将使用<code>NSString</code>直接调用<code>string</code>方法，返回一个新建的<code>NSString</code>对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id myObject = [nssTRING STRING];</span><br></pre></td></tr></table></figure></p>
+<p>类型<code>id</code>为最原始类型，表示变量<code>myObject</code>适用于任何类型，所以这么写的话，你在编译这段代码的时候并不知道它真实的类型是什么。<br>很明显，这个例子中的对象其实是一个<code>NSString</code>类型，所以我们可以这么写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSString* myString = [NSString string];</span><br></pre></td></tr></table></figure></p>
+<p>现在这是个<code>NSString</code>类型了，编译器就会警告你试图调用的某些方法<code>NSString</code>是不支持的。<br>注意对象类型右边的<code>*</code>号，所有的OC变量都是指针类型。类型<code>id</code>是一个预定义的指针类型，所以不用写星号</p>
+<p>##Nested Messages<br>很多语言都有嵌套方法或者方法调用，就像这样子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function1 ( function2() );</span><br></pre></td></tr></table></figure></p>
+<p>funtion2的返回值传给function1。在OC中嵌套机制如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[NSString stringWithFormat:[prefs format]];</span><br></pre></td></tr></table></figure></p>
+<p>为了避免难以阅读，请尽量不要在单行中嵌套调用超过两层。</p>
+<p>##Multi-Input Methods<br>有些方法有输入多个参数。OC中一个方法名可以被拆分成几个部分，在<em>header</em>中多个输入参数的方法声明如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-(BOOL)writeToFile:(NSString *)path atomically:(BOOL)useAuxiliaryFile;</span><br></pre></td></tr></table></figure></p>
+<p>调用上面的方法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BOOL result = [myData writeTofile:@&quot;/tmp/log.txt&quot; atomically:NO];</span><br></pre></td></tr></table></figure></p>
+<p>这些方法不仅仅是命名参数，在运行时他们确实也是叫writeTofile:atomically:</p>
+<p>#PART 2 - Accessors<br>OC默认所有的变量都是私有的（private），所以大部分情况下你需要使用get和set来访问。OC有两种语法。<br>传统的1.x语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[photo setCaption:@&quot;Day at the Beach&quot;];</span><br><span class="line">output = [photo caption];</span><br></pre></td></tr></table></figure></p>
+<p>实际上，代码中第二行并不是直接读取该实例的值，而是调用了一个叫<code>caption</code>的方法。同时在OC中，在调用getters方法时，大部分情况下不必显示地写前置<code>get</code>。<br>任何你看到的方括号的代码，其实都是发送一个信息给一个对象（object）或者类（class）。</p>
+<p>##Dot Syntax<br>Mac OS X 10.5中OC2.0引进了getters和setters的点语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">photo.caption = @&quot;Day at the Beach&quot;;</span><br><span class="line">output = photo.caption;</span><br></pre></td></tr></table></figure></p>
+<p>You can use either style, but choose only one for each project。点语法只能用于setters和getters，不能用于构造方法。</p>
+<p>#PART 3 - Creating Objects<br>有两种主要的构造方法，一个是上文提到过的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSString* myString = [NSString string];</span><br></pre></td></tr></table></figure></p>
+<p>这是更方便自动化的方式。这种方式下，你创建了一个自动释放的对象，之后我们会深入讲它。然而，大部分情况下，你得手动的方式创建一个对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSString* myString = [[NSString alloc] init];</span><br></pre></td></tr></table></figure></p>
+<p>它是一个方法的嵌套调用。第一个方法<code>alloc</code>是类方法，NSString直接调用。这是一个相对低级的调用，它分配了内存并实例化了一个对象。<br>第二个部分是新建的对象调用<code>init</code>。初始化的工作通常是最基本的组成，比如创建实例的对象。不过其内部实现对使用者是透明的，使用者无须了解具体实现。<br>有时候，你或许会用到不一样的带输入参数的<code>init</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSNumber* value = [[NSNumeber alloc] iniWithFloat:1.0];</span><br></pre></td></tr></table></figure></p>
+<p>#PART 4 - Basic Memory Management<br>如果你要写一个Mac OS X的应用，你可以选择性的允许垃圾收集。这意味着，通常你不用关心内存管理，直到你遇到复杂的业务。<br>然而，你不一定总是工作于支持垃圾收集机制的环境下。这种情况下，你得知道些基础概念。<br>如果你创建了一个手动<code>alloc</code>的对象，你之后得<code>relase</code>。但是对于自动释放的对象，你不能手动释放，这样会报错。<br>有两个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// string1 will be released automatically</span><br><span class="line">NSString* string1 = [NSString string];</span><br><span class="line"></span><br><span class="line">// must release this when done</span><br><span class="line">NSString* string2 = [[NSString alloc] init];</span><br><span class="line">[string2 release];</span><br></pre></td></tr></table></figure></p>
+<p>从这部分引导，你了解了自动化的对象在当前的方法结束后会消失。<br>虽然关于内存管理还有更多内容要学习，不过在了解更多的概念之后学习将更有意义。</p>
+<p>#PART 5 - Designing a Class Interface<br>OC创建一个类非常简单。通常两部分来实现。<br>接口类通常保存在ClassName.h文件中，其定义了实例变量和公共的方法。<br>ClassName.m文件是接口的真正实现类，它包含了方法的真实实现。通常方法会被定义为私有，这样类的调用者不能访问。<br>这里有个接口文件的样式，这个类叫做 <code>Photo</code> ，所以该文件名为<code>Photo.h</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Cocoa/Cocoa.h&gt;</span><br><span class="line">    </span><br><span class="line">@interface Photo : NSObject &#123;</span><br><span class="line">    NSString* caption;</span><br><span class="line">    NSString* photographer;</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>首先，我们导入<code>Cocoa.h</code>来导入Cocoa 应用所需要的基本类。<code>#import</code>命令自动防止单个文件导入多次。<br><code>@interface</code>表明这是一个类<code>Photo</code>的声明，冒号具体说明它的父类是一个<code>NSObject</code>类型。<br>花括号中有两个变量：<code>caption</code>和<code>photographer</code>，两个都是NSString类型，不过他们可以是任意类型，包括类型 id。<br>最后，<code>@end</code>标记结尾，结束声明。</p>
+<h2 id="Add-Methods"><a href="#Add-Methods" class="headerlink" title="Add Methods"></a>Add Methods</h2><p>我们来为上述实例添加几个getters方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Cocoa/Cocoa.h&gt;</span><br><span class="line">    </span><br><span class="line">@interface Photo : NSObject &#123;</span><br><span class="line">    NSString* caption;</span><br><span class="line">    NSString* photographer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- caption;</span><br><span class="line">- photographer;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>记住OC方法通常去掉前置”get”。方法前一个单独的减号表示此方法为实例方法；而一个加号则表示它是一个类方法。<br>默认情况下，编译器假定方法返回一个<code>id</code>对象，输入的对象也是<code>id</code>类型。上述代码在理论上是正确的，不过没有实际意义。让我们添加指定类型的返回值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Cocoa/Cocoa.h&gt;</span><br><span class="line">    </span><br><span class="line">@interface Photo : NSObject &#123;</span><br><span class="line">    NSString* caption;</span><br><span class="line">    NSString* photographer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (NSString*) caption;</span><br><span class="line">- (NSString*) photographer;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>现在添加setters:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Cocoa/Cocoa.h&gt;</span><br><span class="line">    </span><br><span class="line">@interface Photo : NSObject &#123;</span><br><span class="line">    NSString* caption;</span><br><span class="line">    NSString* photographer;</span><br><span class="line">&#125;</span><br><span class="line">- (NSString*) caption;</span><br><span class="line">- (NSString*) photographer;</span><br><span class="line"></span><br><span class="line">- (void) setCaption: (NSString*)input;</span><br><span class="line">- (void) setPhotographer: (NSString*)input;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>Setters不需要返回值，所以我们声明为<code>void</code></p>
+<p>#PART 6 - Class Implementation<br>创建一个有getters的实现类：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;Photo.h&quot;</span><br><span class="line"></span><br><span class="line">@implementation Photo</span><br><span class="line">    </span><br><span class="line">- (NSString*) caption &#123;</span><br><span class="line">    return caption;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (NSString*) photographer &#123;</span><br><span class="line">    return photographer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>类似接口上面代码由 @implementation 加类名开头，以@end 结尾。所有代码都得在两个声明之间。<br>如果你写过代码你会觉得getter看起来非常熟悉，所以让我们移步到setters展开说明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- (void) setCaption: (NSString*)input</span><br><span class="line">&#123;</span><br><span class="line">    [caption autorelease];</span><br><span class="line">    caption = [input retain];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void) setPhotographer: (NSString*)input</span><br><span class="line">&#123;</span><br><span class="line">    [photographer autorelease];</span><br><span class="line">    photographer = [input retain];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>每个setter处理两个变量，第一个是指向原有对象的引用，第二个是新的输入对象。在垃圾收集环境下，我们只要直接复制就好：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- (void) setCaption: (NSString*)input &#123;</span><br><span class="line">    caption = input;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>但是如果不能使用垃圾收集机制，你需要<code>relase</code>释放旧的对象，<code>retain</code>保留新的。<br>有两种方式释放引用：<code>release</code>和<code>autorelease</code>。标准的<code>release</code>释放将立即移除引用。<code>autorelease</code>方法将会尽快释放，但是它至少会保持到该方法结束（除非你特别的自定义编码改变它）。<br>因为新对象和旧对象不会指向同一个对象，所以自动释放在setter内部是安全的。你并不想立即释放一个你想保留的对象。<br>现在或许会觉得困惑，等继续深入之后你会慢慢理解这些困惑。所以你现在完全不理解也没有关系。</p>
+<h2 id="Init"><a href="#Init" class="headerlink" title="Init"></a>Init</h2><p>我们可以创建一个<code>init</code>方法来初始化我们的实例变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (id) init</span><br><span class="line">&#123;</span><br><span class="line">    if ( self = [super init] )</span><br><span class="line">    &#123;</span><br><span class="line">        [self setCaption:@&quot;Default Caption&quot;];</span><br><span class="line">        [self setPhotographer:@&quot;Default Photographer&quot;];</span><br><span class="line">    &#125;</span><br><span class="line">    return self;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这简直是自我解释的意思，虽然第二行看起来有点怪异，这个等号意思是说把<code>[super init]</code>的返回值赋值给自己。<br>这本质上就是调用父类来构造自己。而<code>if</code>声明则是指在你尝试设置默认值前判断初始化是否成功。</p>
+<p>##Dealloc<br><code>dealloc</code>方法会在对象从内存中被移除的时候调用。使用此方法的最佳时机是你想释放所有子对象变量的时候：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (void) dealloc</span><br><span class="line">&#123;</span><br><span class="line">    [caption release];</span><br><span class="line">    [photographer release];</span><br><span class="line">    [super dealloc];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>前两行代码，我们仅仅释放每个实例变量。这里我们不使用自动释放，因为标准的释放会快一点。<br>最后一行非常重要，我们必须发送<code>[super deallo]</code>消息，让父类做清理。如果没有调用的话，对象不会被移除，这将导致内存泄漏。<br>开启了垃圾回收机制时，<code>dealloc</code>方法不会被调用。相反，你应该实现<code>finalize</code>方法。</p>
+<p>#PART 7 - More on Memory Management<br>OC的内存管理模型称为引用计数。你所要做的就是观察引用的轨迹，并在运行时准确的释放内存。<br>对象最简单的生命周期中，你<code>alloc</code>分配了一个对象，或许在后面某个节点<code>retain</code>保留了该对象，接着你给所有 <code>alloc/retain</code>发送<code>release</code>信息来释放。所以，如果你<code>alloc</code>一次然后<code>retain</code>一次，你就得<code>release</code>两次。</p>
+<p><img src="./_image/2016-06-03 10-07-58.png" alt="内存模型"><br>上面是理论的引用计数。在实际医用中，通常只有两种情况需要创建对象：</p>
+<ol>
+<li>保持一个对象的变量</li>
+<li>在方法中用于临时场景<br>大部分情况，为一个对象setter变量只要<code>autorelease</code>旧对象，<code>retain</code>新对象。同时你要保证在<code>dealloc</code>也释放。<br>所以真正的工作是管理在方法内部的本地引用。这只有一个规则：如果你通过<code>alloc</code>或<code>copy</code>创建一个对象，你需要在方法结束之后发送<code>release</code>或<code>autorelease</code>信息。如果你使用其他任何方式创建对象，大可什么都不要做。<br>下面是第一个案例，管理实例化变量：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- (void) setTotalAmount: (NSNumber*)input</span><br><span class="line">&#123;</span><br><span class="line">    [totalAmount autorelease];</span><br><span class="line">    totalAmount = [input retain];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void) dealloc</span><br><span class="line">&#123;</span><br><span class="line">    [totalAmount release];</span><br><span class="line">    [super dealloc];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>下面是另一个案例，本地引用。我们只要释放通过alloc创建的对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">NSNumber* value1 = [[NSNumber alloc] initWithFloat:8.75];</span><br><span class="line">NSNumber* value2 = [NSNumber numberWithFloat:14.78];</span><br><span class="line"></span><br><span class="line">// only release value1, not value2</span><br><span class="line">[value1 release];</span><br></pre></td></tr></table></figure></p>
+<p>下面的案例会使用冒号<code>:</code>一个本地对象赋值一个实例化的变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">NSNumber* value1 = [[NSNumber alloc] initWithFloat:8.75];</span><br><span class="line">[self setTotal:value1];</span><br><span class="line"></span><br><span class="line">NSNumber* value2 = [NSNumber numberWithFloat:14.78];</span><br><span class="line">[self setTotal:value2];</span><br><span class="line"></span><br><span class="line">[value1 release];</span><br></pre></td></tr></table></figure></p>
+<p>注意到这与管理本地引用是完全一致的，你无须关心是否为实例化变量赋值。你不需要在意setters是如何实现的。<br>如果你明白了这一点，你就已经掌握了90%的OC内存管理了。</p>
+<p>#PART 8 - Logging<br>OC中在控制台打印信息非常简单。除了额外的<code>%@</code>用来指代对象外，OC的NSLog()方法与C语言的printf()方法几乎一模一样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSLog ( @&quot;The current date and time is: %@&quot;, [NSDate date] );</span><br></pre></td></tr></table></figure></p>
+<p>你可以在控制台打印一个对象。NSLog方法调用对象的<code>description</code>方法打印返回的NSString类型数据。你可以重载description方法，返回想要的字符串。</p>
+<p>#PART 9 - Properties<br>还记得我们在写caption和author访问的方法吗，你也许已经注意到了那些代码非常简单并且是可以被动生成的。<br>Properties(属性)是OC的一个语法，将为你自动整合访问私有变量的代码，同时它还有一些其他好处。让我们用properties改造下Photo类。<br>原来的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Cocoa/Cocoa.h&gt;</span><br><span class="line"></span><br><span class="line">@interface Photo : NSObject &#123;</span><br><span class="line">    NSString* caption;</span><br><span class="line">    NSString* photographer;</span><br><span class="line">&#125;</span><br><span class="line">- (NSString*) caption;</span><br><span class="line">- (NSString*) photographer;</span><br><span class="line"></span><br><span class="line">- (void) setCaption: (NSString*)input;</span><br><span class="line">- (void) setPhotographer: (NSString*)input;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>用properties改造之后的代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Cocoa/Cocoa.h&gt;</span><br><span class="line"></span><br><span class="line">@interface Photo : NSObject &#123;</span><br><span class="line">    NSString* caption;</span><br><span class="line">    NSString* photographer;</span><br><span class="line">&#125;</span><br><span class="line">@property (retain) NSString* caption;</span><br><span class="line">@property (retain) NSString* photographer;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p><code>@property</code>是OC声明了属性的一个命令。圆括号中的”retain”声明了setter应该保留输入的值，剩余的代码就是简单的声明属性名和类型。<br>现在我们来看下实现部分：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;Photo.h&quot;</span><br><span class="line">        </span><br><span class="line">@implementation Photo</span><br><span class="line"></span><br><span class="line">@synthesize caption;</span><br><span class="line">@synthesize photographer;</span><br><span class="line"></span><br><span class="line">- (void) dealloc</span><br><span class="line">&#123;</span><br><span class="line">    [caption release];</span><br><span class="line">    [photographer release];</span><br><span class="line">    [super dealloc];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p><code>@synthesize</code>命令自动为我们自动生成了setters和getters方法，所以我们所要做的就是实现dealloc方法就可以了。<br>只有在不存在的时候访问方法才会被创建，所以如果你想生成setters和getters，请放心为属性声明@synthesize，如果有缺少访问方法的话编译器会自动填充。<br>属性声明还有很多其他选项，不过这已经超过本引导的范围，故不做讲解。</p>
+<p>#PART 10 - Calling Methods on Nill<br>OC中，<code>nil</code>对象功能等价于其他语言的<code>NULL</code>指针。不同点在于如果你使用nil对象调用方法的话不会闪退或抛出异常。<br>这个技术在框架中被用于很多不同的实践，不过现在主要的一点就是你使用一个对象调用其方法时不需要再验证是否为空了。如果你使用nil对象调用一个方法，它将返回nil。<br>因此我们还可以略微的改进下我们的dealloc方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (void) dealloc</span><br><span class="line">&#123;</span><br><span class="line">    self.caption = nil;</span><br><span class="line">    self.photographer = nil;</span><br><span class="line">    [super dealloc];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上述代码能够运行是因为我们给实例化的变量赋值nil时，setter仅仅保留了nil并释放了旧的值。对于deallloc来说是更好的解决方式，因为变量没有机会指向随机的曾今已有的对象。<br>注意到这里我们用的是<code>self.&lt;var&gt;</code>语法，意味着我们是通过setter方法获得内存管理并释放的。如果我们之间像下面那样直接赋值，将会导致内存泄漏：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// incorrect. causes a memory leak.</span><br><span class="line">// use self.caption to go through setter</span><br><span class="line">caption = nil;</span><br></pre></td></tr></table></figure></p>
+<p>PART 11 - Categories<br>Categories 是OC中最有用的功能了。大体意思，category可以让你不用继承一个已经存在的类就可以为那个类添加方法，or needing to know any of the details of how it’s implemented。<br>这相当有用，你可以为一个内建的对象添加方法。比如你可以为你项目中所有的NSString对象添加一个类别，却不用自定义一个超类。<br>例如，如果我想在NSString添加一个验证传入的内容是否是一个URL，你可以这样写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Cocoa/Cocoa.h&gt;</span><br><span class="line">            </span><br><span class="line">@interface NSString (Utilities)</span><br><span class="line">- (BOOL) isURL;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>这非常像一个类的声明，不同点在于没有父类，而是一个圆括号中的类别名。类别名用于方法调用，名字没有限制可以随意取。<br>下面是其实现方式。不过这不是一个好的辨别URL的方式，我们只是为了阐述categories访问这个概念：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;NSString-Utilities.h&quot;</span><br><span class="line">            </span><br><span class="line">@implementation NSString (Utilities)</span><br><span class="line"></span><br><span class="line">- (BOOL) isURL</span><br><span class="line">&#123;</span><br><span class="line">    if ( [self hasPrefix:@&quot;http://&quot;] )</span><br><span class="line">        return YES;</span><br><span class="line">    else</span><br><span class="line">        return NO;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>现在你所有NSString对象都可以使用这个方法。下面的代码将在控制台打印”string1 is a URL”:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NSString* string1 = @&quot;http://pixar.com/&quot;;</span><br><span class="line">NSString* string2 = @&quot;Pixar&quot;;</span><br><span class="line"></span><br><span class="line">if ( [string1 isURL] )</span><br><span class="line">    NSLog (@&quot;string1 is a URL&quot;);</span><br><span class="line"></span><br><span class="line">if ( [string2 isURL] )</span><br><span class="line">    NSLog (@&quot;string2 is a URL&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>不像子类，类别不可以添加实例变量。但是你可以重载类中已有的方法，即便如此你还是得十分谨慎的使用。<br>记住你使用类别改变一个类，整个应用中使用到这个类的实例都会被影响到。</p>
+<p>#Wrap Up<br>以上就是OC的基本概要了，正如你所看到的，OC是相当简单易学的，没有那么多特别的语法需要学习，and the same conventions are used over and over again throughout Cocoa.<br>如果你迫不及待的想了解这些例子，通过下面的链接下载，查看源码：<br><a href="&quot;http://cocoadevcentral.com/downloads/LearnObjectiveC-20080414a.zip&quot;">LearnObjectiveC</a>Xcode 3.0 Project(56k);</p>
+<hr>
+<p>谢谢。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/object-c/" rel="tag">#object-c</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/02/6ios学习日志/" rel="next" title="ios学习日志占坑">
+                <i class="fa fa-chevron-left"></i> ios学习日志占坑
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/03/8OC学习记录/" rel="prev" title="OC学习记录">
+                OC学习记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="嘟嘟仔" />
+          <p class="site-author-name" itemprop="name">嘟嘟仔</p>
+          <p class="site-description motion-element" itemprop="description">life is struggle</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">我的关注</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/wx_jin" target="_blank">WX_JIN的博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-Methods"><span class="nav-number">1.</span> <span class="nav-text">Add Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Init"><span class="nav-number">2.</span> <span class="nav-text">Init</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">嘟嘟仔</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>
